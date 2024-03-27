@@ -1,16 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./output.css" rel="stylesheet" />
+    <link href="./css/output.css" rel="stylesheet" />
     <title>Security</title>
   </head>
   <body
-    class="min-h-screen bg-gray-50 bg-[url('/wave.svg')] bg-fixed bg-bottom bg-no-repeat"
+    class="min-h-screen bg-gray-50 bg-fixed bg-bottom bg-no-repeat md:bg-[url('/images/wave.svg')]"
   >
-    <header class="flex items-center justify-between p-10">
-      <a href="#" class="flex items-center gap-2">
+    <header
+      class="flex flex-col items-center justify-between gap-4 p-6 pb-2 sm:flex-row sm:gap-0 sm:p-10 sm:pb-10"
+    >
+      <a href="index.html" class="flex items-center gap-2">
         <svg
           class="h-10 text-green-600"
           xmlns="http://www.w3.org/2000/svg"
@@ -27,17 +29,17 @@
         </svg>
         <span class="text-xl font-black">Security</span>
       </a>
-      <div>
+      <div class="flex w-full text-center sm:w-auto">
         <a
-          href="#"
-          class="rounded-lg bg-green-600 px-6 py-2 text-2xl font-medium text-white shadow-lg transition duration-150 ease-in-out hover:bg-green-700 hover:shadow-xl focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
-          >Зарегистрироваться</a
+          href="/pages/register.html"
+          class="w-full rounded-lg bg-green-600 px-6 py-2 text-xl font-medium text-white shadow-lg transition duration-150 ease-in-out hover:bg-green-700 hover:shadow-xl focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 sm:w-auto sm:text-2xl"
+          >Регистрация</a
         >
       </div>
     </header>
 
-    <div class="flex flex-col justify-center p-6">
-      <div class="mx-auto max-w-md">
+    <main class="flex flex-col justify-center p-6">
+      <div class="mx-auto max-w-md py-6 sm:py-0">
         <svg
           class="mx-auto h-12 w-12 text-green-600"
           xmlns="http://www.w3.org/2000/svg"
@@ -63,6 +65,29 @@
         class="mx-auto mt-6 w-full max-w-md rounded-xl bg-white/80 p-6 shadow-xl backdrop-blur-lg sm:mt-10 sm:p-10"
       >
         <form class="space-y-6" action="#" autocomplete="off">
+          <!-- not verifycation -->
+          <div
+            class="flex gap-3 rounded border border-red-500 bg-orange-50 p-4"
+          >
+            <svg
+              class="h-6 w-6 shrink-0 text-red-400"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
+              />
+            </svg>
+            <p class="text-sm font-medium text-red-800">
+              Указанный Вами логин или пароль не действительны
+            </p>
+          </div>
+          <!-- ---- -->
           <!-- email -->
           <div>
             <label class="text-md block font-medium text-gray-700" for="email"
@@ -131,23 +156,34 @@
           </div>
           <!-- --- -->
 
-          <div class="flex justify-between">
+          <div
+            class="flex flex-col items-center gap-2 sm:flex-row sm:justify-between"
+          >
             <div class="flex items-center gap-2">
-              <input class="w-4 h-4 rounded border-green-500 text-green-600 focus:ring-green-500 focus:ring-offset-2" type="checkbox" name="remember" id="remember" />
+              <input
+                class="h-4 w-4 rounded border-green-500 text-green-600 focus:ring-green-500 focus:ring-offset-2"
+                type="checkbox"
+                name="remember"
+                id="remember"
+              />
               <label for="remember">Запомнить меня</label>
             </div>
-            <a href="#" class="text-sm font-medium border-b border-b-green-600 text-green-600 hover:text-green-500 hover:border-b-green-500 transition duration-150 ease-in-out">Вы забыли пароль?</a>
+            <a
+              href="./pages/forgot-password.html"
+              class="border-b border-b-green-600 text-sm font-medium text-green-600 transition duration-150 ease-in-out hover:border-b-green-500 hover:text-green-500"
+              >Вы забыли пароль?</a
+            >
           </div>
 
           <div>
             <a
               href="#"
-              class="flex w-full items-center justify-center rounded-lg bg-green-600 px-6 py-2 text-2xl font-medium text-white shadow-lg transition duration-150 ease-in-out hover:bg-green-700 hover:shadow-xl focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+              class="flex w-full items-center justify-center rounded-lg bg-green-600 px-6 py-2 text-xl font-medium text-white shadow-lg transition duration-150 ease-in-out hover:bg-green-700 hover:shadow-xl focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 sm:text-2xl"
               >Войти</a
             >
           </div>
         </form>
       </div>
-    </div>
+    </main>
   </body>
 </html>
